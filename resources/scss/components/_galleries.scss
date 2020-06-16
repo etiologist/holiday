@@ -1,0 +1,132 @@
+@import '../helpers/variables',
+        '../helpers/placeholders',
+        '../helpers/variables',
+        '../helpers/functions';
+
+/* Contents
+/* 1. Basic Image Gallery
+/* 2. Grid Image Gallery
+/* 3. Paralax
+
+/* 1. Basic Image Gallery */
+
+.basicGalleryTwo, .basicGalleryFour {
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+    flex-flow: row wrap;
+}
+
+.basicGalleryFour {
+    img {
+        max-width: 28%;
+        flex: 1;
+        margin: 1rem;
+        // @extend %standard-border;
+        height: auto;
+        min-width: 0px;
+    }
+}
+
+.basicGalleryTwo {
+    img {
+        max-width: 45%;
+        flex: 1;
+        margin: 1rem;
+        // @extend %standard-border;
+        height: auto;
+        min-width: 0px;
+    }
+}
+
+@media all and (max-width: $breakpoint) {
+    .basicGalleryTwo {
+        img {
+            flex: 0 1 auto;
+            max-width: 100%;
+        }
+    }
+    .basicGalleryFour {
+        img {
+            flex: 0 1 auto;
+            max-width: 100%;
+        }
+    }
+}
+
+
+
+/* 2. Grid Image Gallery */
+/* 6 by 10 */
+
+.gridGallery {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    align-items: center;
+    justify-items: stretch;
+    img {
+        // @extend %standard-border;
+    }
+    .grid{
+        transition: 0.5s ease-in-out 0.5s;
+    }
+    .item-a {
+        grid-column-start: 1;
+        grid-column-end: span 5;
+        grid-row-start: 1;
+        grid-row-end: span 4;
+        z-index: 1;
+    }
+    .item-b {
+        grid-column-start: 3;
+        grid-column-end: span 5;
+        grid-row-start: 2;
+        grid-row-end: span 4;
+        z-index: 3; 
+    }
+    .item-c {
+        grid-column-start: 6;
+        grid-column-end: span 5;
+        grid-row-start: 3;
+        grid-row-end: span 4;
+        z-index: 2;        
+    }
+}
+
+.grid:hover {
+    z-index: 5;
+}
+
+/* 3. Paralax */
+
+.parallaxHolder {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    height: auto;
+    .parallax {
+        min-height: 0px;	
+        height: 500px;
+	    background-attachment: fixed;
+	    background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 1em;
+        width: 100%;
+    }
+}
+
+
+@media all and (max-width: $breakpoint) {
+    .parallaxHolder
+        .parallax {
+            height: 150px;
+            width: 100%;
+            background-size: contain;
+        }
+}
+
+

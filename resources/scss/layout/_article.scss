@@ -1,0 +1,28 @@
+
+@import '../helpers/variables',
+'../helpers/placeholders',
+'../helpers/variables',
+'../helpers/functions';
+
+article {
+	padding: 2.5em 3em;
+	text-align: justify;
+}
+	
+.entry-header {
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	p {
+		flex: 1;
+		margin: 0; 
+		text-align: right;
+		color: $brownYellow;
+	}
+	h3 {
+		flex: 1 1 auto;
+		text-align: left;
+		margin: 0 0 .5em;
+	}
+}
+	

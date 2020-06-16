@@ -1,0 +1,136 @@
+/* Core functionality for Respoinsive Tabs */
+
+.responsive-tabs__heading {
+    display: none;
+}
+
+.responsive-tabs__list__item {
+    display: inline;
+    cursor: pointer;
+}
+
+
+@media all and (max-width: 767px) {
+    .responsive-tabs__list {
+        display: none;
+    }
+
+    .responsive-tabs__heading {
+        display: block;
+        cursor: pointer;
+    }
+
+    .responsive-tabs__panel--closed-accordion-only {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+    .responsive-tabs__panel--closed-accordion-only {
+        display: block !important;
+    }
+}
+
+/* Tab Design */
+
+.responsive-tabs-wrapper {
+    clear: both;
+}
+
+.responsive-tabs-wrapper:before,
+.responsive-tabs-wrapper:after {
+    content: "";
+    display: table;
+}
+
+.responsive-tabs-wrapper:after {
+    clear: both;
+}
+
+.responsive-tabs__heading:focus,
+.responsive-tabs__list__item:focus {
+    outline: 1px solid #f8efdc;
+}
+
+.responsive-tabs__heading--active:focus,
+.responsive-tabs__list__item--active:focus {
+    outline: none !important;
+}
+
+.responsive-tabs__list {
+    font-size: 1.2em;
+    margin: 2em 0 0 0;
+    padding: 0;
+    border-bottom: 1px solid #f8efdc;
+    padding-bottom: 11px;
+    line-height: 1em;
+}
+
+.responsive-tabs__list__item {
+    background-color: #202020;
+    padding: 10px 20px;
+    margin-right: 1em;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+	border: 1px solid #f8efdc;
+	color: #f8efdc;
+}
+
+.responsive-tabs__list__item:hover {
+	background: #f8efdc;
+	color: #202020;
+}
+
+.responsive-tabs__list__item--active,
+.responsive-tabs__list__item--active:hover {
+    background: #f8efdc;
+	border-bottom-color: #f8efdc;
+	color: #202020;
+	
+}
+
+.responsive-tabs__panel {
+	margin-bottom: 50px;
+	background-color: #f8efdc;
+}
+
+@media (max-width: 767px) {
+    .responsive-tabs__heading {
+        padding: 0.5em;
+        border-radius: 5px;
+        border: 1px solid #f8efdc;
+        box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
+        background: #f8efdc;
+        position: relative;
+    }
+
+    .responsive-tabs__heading:after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 40%;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+		border-top: 10px solid #202020;
+    }
+
+    .responsive-tabs__heading:hover,
+    .responsive-tabs__heading--active:hover {
+		background-color: #f8efdc;
+		
+    }
+
+    .responsive-tabs__heading--active {
+        background: #f8efdc;
+    }
+
+    .responsive-tabs__heading--active:after {
+        border-bottom: 10px solid #202020;
+        border-top: 0;
+    }
+
+}

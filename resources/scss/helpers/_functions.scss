@@ -1,0 +1,54 @@
+@use "sass:math";
+
+/* width */
+
+@function calculate-width ($col-span) {
+    @return 100% / $col-span 
+}
+
+.span-two {
+    width: calculate-width(2); // spans 2 columns, width = 50%
+}
+
+.span-three {
+    width: calculate-width(3); // spans 3 columns, width = 33.3%
+}
+
+/* z-index ordering */ 
+@function z($name, $z-indexes-list: $z-indexes) {
+    @if index($z-indexes-list, $name) {
+    @return (length($z-indexes-list) - index($z-indexes-list, $name)) + 1;
+    } @else {
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes-list}';
+    
+    @return null;
+    }
+   }
+
+// half numbers
+@function n($num) {
+    @return ($num / 2);
+   }
+
+// divide by n adjust margin
+@function div($num) {
+   @return (1 / $num);
+}
+
+// neg numbers
+@function neg($num) {
+    @return 0 - $num;
+   }
+
+// half neg numbers
+// Function
+@function hn($num) {
+    @return n(h($num));
+   }
+
+// Define default font size
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+  }
+
