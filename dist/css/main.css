@@ -441,11 +441,19 @@ h2 {
             flex: 0 1 auto;
     max-width: 100%;
   }
+  .basicGalleryFour {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .basicGalleryFour img {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 auto;
             flex: 0 1 auto;
     max-width: 100%;
+  }
+  .basicGalleryFour .container h3 {
+    line-height: normal;
   }
 }
 
@@ -685,6 +693,61 @@ h2 {
 }
 
 /* z-index ordering */
+.container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #cfddf3;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 28%;
+  min-width: 0px;
+  height: auto;
+}
+
+.container h3 {
+  line-height: 0;
+}
+
+.container .destintion {
+  text-align: center;
+}
+
+.container .weather {
+  text-align: center;
+}
+
+.container .sectiontitle {
+  text-align: center;
+}
+
+.container #weather img, .container #weather1 img {
+  margin: 0em;
+  line-height: 0;
+}
+
+/* colours */
+/* colours */
+@use "sass:math";
+/* width */
+.span-two {
+  width: 50%;
+}
+
+.span-three {
+  width: 33.33333%;
+}
+
+/* z-index ordering */
 article {
   padding: 2.5em 3em;
   text-align: justify;
@@ -745,7 +808,7 @@ header {
   background-image: url("../../resources/photos/andalusia/generalife K D and J.jpg");
 }
 
-#seville img {
+#seville img, #seville .container {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;

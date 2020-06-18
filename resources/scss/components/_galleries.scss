@@ -52,6 +52,10 @@
             flex: 0 1 auto;
             max-width: 100%;
         }
+        justify-content: center;
+        .container h3 {
+            line-height: normal;
+        }
     }
 }
 
@@ -66,9 +70,6 @@
     grid-template-rows: repeat(6, 1fr);
     align-items: center;
     justify-items: stretch;
-    img {
-        // @extend %standard-border;
-    }
     .grid{
         transition: 0.5s ease-in-out 0.5s;
     }

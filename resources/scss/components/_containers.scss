@@ -1,0 +1,35 @@
+@import '../helpers/variables',
+        '../helpers/placeholders',
+        '../helpers/variables',
+        '../helpers/functions';
+
+.container {
+    h3 {
+    line-height: 0;
+    }
+    flex: 1;
+    display: flex;
+    background-color: $lightBlue;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 28%;
+    min-width: 0px;
+    height: auto;
+    .destintion {
+        text-align:center;
+    }
+    .weather {
+        text-align:center;
+    }
+    .sectiontitle {
+        text-align:center;
+    }
+    #weather img, #weather1 img{
+        margin: 0em;
+        line-height: 0;
+    }
+}
+
+
+
